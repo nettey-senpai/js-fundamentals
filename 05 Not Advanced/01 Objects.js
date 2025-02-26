@@ -14,7 +14,10 @@ User.prototype.getFirstName = function () {
 // new keyword creates a unique instance of the object and prevents the this from pointing towards the window object because it is no longer a regular funnction call
 var jeffrey = new User("jeffrey", 2);
 jeffrey.getCourseCount();
-jeffrey.getFirstName();
+
+if (jeffrey.hasOwnProperty("firstName")) {
+    jeffrey.getFirstName();
+}
 // console.log(jeffrey);
 
 var sam = new User("sam", 1);
