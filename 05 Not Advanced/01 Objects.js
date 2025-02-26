@@ -7,9 +7,17 @@ var User = function (firstName, courseCount) {
   };
 };
 
-// new keyword creates a unique instance of the object and prevents the this from pointing towards the window object because it is no longer a regular funnction call 
+User.prototype.getFirstName = function () {
+  console.log(`Your first name is: ${this.firstName}`);
+};
+
+// new keyword creates a unique instance of the object and prevents the this from pointing towards the window object because it is no longer a regular funnction call
 var jeffrey = new User("jeffrey", 2);
-console.log(jeffrey);
+jeffrey.getCourseCount();
+jeffrey.getFirstName();
+// console.log(jeffrey);
 
 var sam = new User("sam", 1);
-console.log(sam);
+sam.getCourseCount();
+sam.getFirstName();
+// console.log(sam);
