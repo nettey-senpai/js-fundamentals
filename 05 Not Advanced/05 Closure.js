@@ -22,4 +22,4 @@ function doAddition (x) {
 var add5 = doAddition(4)
 console.log(add5(5));
 
-console.log(doAddition(5)(5));
+console.log(doAddition(5)(5)); //curring
