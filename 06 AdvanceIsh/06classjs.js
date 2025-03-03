@@ -14,15 +14,34 @@ class User {
   getCourseList() {
     return this.#courseList;
   }
+  
+  login() {
+    return "You are logged in";
+  }
+}
+
+class SubAdmin extends User {
+  constructor(name, email) {
+    super(name, email);
+  }
+  getAdminInfo() {
+    return "I am subadmin";
+  }
+  login() {
+    return "login for admin only"
+  }
 }
 
 module.exports = User;
 
-const rock = new User("rock", "rock@rock.com")
-console.log(rock.getInfo);
-rock.enrollCourse("ReactJS Bootcamp")
-console.log(rock.getCourseList());
-console.log(rock.courseList);
+const rock = new User("rock", "rock@rock.com");
+// console.log(rock.getInfo);
+rock.enrollCourse("ReactJS Bootcamp");
+// console.log(rock.getCourseList());
+// console.log(rock.courseList);
 
+const tom = new SubAdmin();
+console.log(tom.getAdminInfo());
+console.log(tom.login);
 
-
+console.log(tom.getInfo);
