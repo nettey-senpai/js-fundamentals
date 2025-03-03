@@ -24,7 +24,7 @@ const courses = [
 // Create unordered list
 function generateList() {
   const ul = document.querySelector(".list-group");
-  ul.innerHTML = "";
+  ul.innerHTML = ""; //reset HTML element values
   courses.forEach((course) => {
     // create list element and add class name
     const li = document.createElement("li");
@@ -46,8 +46,6 @@ function generateList() {
     ul.appendChild(li);
   });
 }
-
-// generateList();
 
 window.addEventListener("load", generateList);
 
