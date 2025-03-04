@@ -1,6 +1,6 @@
 // import User from "./06classjs";
 
-const User = require("./06classjs");
+const User = require("./06classjs.js");
 
 const jeffrey = new User("jeffrey", "jeffrey@lco.dev");
 

@@ -14,7 +14,7 @@ class User {
   getCourseList() {
     return this.#courseList;
   }
-  
+
   login() {
     return "You are logged in";
   }
@@ -27,8 +27,9 @@ class SubAdmin extends User {
   getAdminInfo() {
     return "I am subadmin";
   }
+  //You can overwrite a method in js 
   login() {
-    return "login for admin only"
+    return "login for admin only";
   }
 }
 
@@ -40,8 +41,8 @@ rock.enrollCourse("ReactJS Bootcamp");
 // console.log(rock.getCourseList());
 // console.log(rock.courseList);
 
-const tom = new SubAdmin();
+const tom = new SubAdmin("tom", "tom@jerry.com");
 console.log(tom.getAdminInfo());
-console.log(tom.login);
+console.log(tom.login());
 
-console.log(tom.getInfo);
+console.log(tom.getInfo());
