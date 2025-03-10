@@ -45,6 +45,7 @@ function fail() {
   setTimeout(() => {
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
+    reset();
   }, 1000);
 }
 
@@ -57,11 +58,10 @@ function reset() {
 //TODO: shuffle
 
 function shuffle() {
-    cards.forEach((card) => {
-        var index = Math.floor(Math.random() * 20)
-        card.style.order = index;
-    })
+  cards.forEach((card) => {
+    var index = Math.floor(Math.random() * 20);
+    card.style.order = index;
+  });
 }
 
-window.addEventListener("load", shuffle)
-
+window.addEventListener("load", shuffle);
