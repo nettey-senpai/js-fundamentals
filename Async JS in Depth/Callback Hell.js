@@ -7,15 +7,31 @@ console.log("before");
 //   });
 // });
 
-getGroceryList(1)
-    .then(list => getGroceryItem(list.id))
-    .then(items => checkItemAvailability(items[0]))
-    .then(availability => console.log("Availability",availability))
-    .catch(err => console.error(err));
-    
+// using promises syntax for callback hell
+// getGroceryList(1)
+//   .then((list) => getGroceryItem(list.id))
+//   .then((items) => checkItemAvailability(items[0]))
+//   .then((availability) => console.log("Availability", availability))
+//   .catch((err) => console.error(err));
+
+// using async await syntax for callback hell
+displayAvailability()
+
 console.log("after");
 
-function getGroceryList(id, callback) {
+async function displayAvailability() {
+  try {
+    const list = await getGroceryList(1);
+    const items = await getGroceryItem(list.id);
+    const availability = await checkItemAvailability(items[0]);
+    console.log("Availability", availability);
+    
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function getGroceryList(id, callback) {
   return new Promise((resolve) => {
     setTimeout(() => {
       // simulate a call to the database
